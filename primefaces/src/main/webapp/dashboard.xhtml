@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<script type="text/javascript">
+		$(function() {
+
+		});
+	</script>
+
+</h:head>
+
+
+<h:body style="background-image: url('img/bg.png');  font-size: 13px;">
+	<div>
+		<p:outputPanel deferred="true">
+			<h3>NIF 2.0 Dashboard.</h3>
+			<p>This dashboard reflects the actual state of resources of the
+				NIF 2.0 project. Here you can also find documentation, corporas,
+				ontologies, demos, wikis and specifications.</p>
+		</p:outputPanel>
+
+	</div>
+
+
+
+	<div style="width: 1120px; float: left;">
+		<div style="float: left; width: 775px">
+			<p:panelGrid columns="3">
+				<f:facet name="header">
+					Online REST Webservices
+				</f:facet>
+
+				<h:outputText value="Service Name" style="font-weight:bold" />
+				<h:outputText value="URL" style="font-weight:bold" />
+				<h:outputText value="Status" style="font-weight:bold" />
+
+
+				<h:outputText value="OpenNLP" />
+				<h:outputLink target="_blank" value="#{checkDemoStatus.openNLPURL}">
+					<h:outputText value="#{checkDemoStatus.openNLPURL}" />
+				</h:outputLink>
+				<h:outputText escape="false"
+					value="#{checkDemoStatus.openNLPStatus}" />
+
+				<h:outputText value="Stanford" />
+				<h:outputLink target="_blank" value="#{checkDemoStatus.stanfordURL}">
+					<h:outputText value="#{checkDemoStatus.stanfordURL}" />
+				</h:outputLink>
+				<h:outputText escape="false"
+					value="#{checkDemoStatus.stanfordStatus}" />
+			</p:panelGrid>
+
+			<p:panelGrid style="margin-top:20px" columns="3">
+				<f:facet name="header">
+					NIF Corpus
+				</f:facet>
+
+				<h:outputText value="Corpus Name" style="font-weight:bold" />
+				<h:outputText value="URL" style="font-weight:bold" />
+				<h:outputText value="DataID File" style="font-weight:bold" />
+
+
+				
+			</p:panelGrid>
+
+
+			<div style="margin-top: 20px; float: left; width: 392px">
+				<p:dataTable style="width: 330px;" var="res"
+					value="#{resourcesView.ontologies}">
+					<p:column style="width:260px" headerText="Ontology">
+						<h:outputText value="#{res.label}" />
+					</p:column>
+					<p:column style="width:80px">
+						<p:commandButton value="Details" type="button"
+							onclick="PF('#{res.uri}o').show();" />
+						<p:dialog modal="true" header="#{res.label}"
+							widgetVar="#{res.uri}o" minHeight="40">
+
+							<h:panelGrid columns="2">
+
+								<h:outputText value="URI" style="font-weight:bold" />
+								<h:outputText value="#{res.uri}" />
+
+								<h:outputText value="Description" style="font-weight:bold" />
+								<h:outputText escape="false" value="#{res.description}" />
+
+								<h:outputText value="Revisions" style="font-weight:bold" />
+								<h:outputText value="#{res.revisions}" />
+
+								<h:outputText value="Status" style="font-weight:bold" />
+								<h:outputText value="#{res.status}" />
+
+								<h:outputText value="Verioning Level" style="font-weight:bold" />
+								<h:outputText value="#{res.versioningLevel}" />
+
+								<h:outputText value="Verioning Method" style="font-weight:bold" />
+								<h:outputText value="#{res.versioningMethod}" />
+							</h:panelGrid>
+						</p:dialog>
+					</p:column>
+				</p:dataTable>
+			</div>
+
+
+			<div style="float: left; margin-top: 20px;">
+				<p:dataTable style="width: 330px;" var="res"
+					value="#{resourcesView.specifications}">
+					<p:column style="width:260px" headerText="NIF Specifications">
+						<h:outputText value="#{res.label}" />
+					</p:column>
+					<p:column style="width:80px">
+						<p:commandButton value="Details" type="button"
+							onclick="PF('#{res.uri}o').show();" />
+						<p:dialog modal="true" header="#{res.label}"
+							widgetVar="#{res.uri}o" minHeight="40">
+
+							<h:panelGrid columns="2">
+
+								<h:outputText value="URI" style="font-weight:bold" />
+								<h:outputText value="#{res.uri}" />
+
+								<h:outputText value="Description" style="font-weight:bold" />
+								<h:outputText escape="false" value="#{res.description}" />
+
+								<h:outputText value="Revisions" style="font-weight:bold" />
+								<h:outputText value="#{res.revisions}" />
+
+								<h:outputText value="Status" style="font-weight:bold" />
+								<h:outputText value="#{res.status}" />
+
+								<h:outputText value="Verioning Level" style="font-weight:bold" />
+								<h:outputText value="#{res.versioningLevel}" />
+
+								<h:outputText value="Verioning Method" style="font-weight:bold" />
+								<h:outputText value="#{res.versioningMethod}" />
+							</h:panelGrid>
+						</p:dialog>
+					</p:column>
+				</p:dataTable>
+			</div>
+		</div>
+
+		<div style="float: right; width: 330px;">
+			<p:dataTable var="res" value="#{resourcesView.wikis}">
+				<p:column style="width:260px" headerText="Wikis">
+					<h:outputText value="#{res.label}" />
+				</p:column>
+				<p:column style="width:80px">
+					<p:commandButton value="Details" type="button"
+						onclick="PF('#{res.uri}o').show();" />
+					<p:dialog modal="true" header="#{res.label}"
+						widgetVar="#{res.uri}o" minHeight="40">
+
+						<h:panelGrid columns="2">
+
+							<h:outputText value="URI" style="font-weight:bold" />
+							<h:outputText value="#{res.uri}" />
+
+							<h:outputText value="Description" style="font-weight:bold" />
+							<h:outputText escape="false" value="#{res.description}" />
+
+							<h:outputText value="Revisions" style="font-weight:bold" />
+							<h:outputText value="#{res.revisions}" />
+
+							<h:outputText value="Status" style="font-weight:bold" />
+							<h:outputText value="#{res.status}" />
+
+							<h:outputText value="Verioning Level" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningLevel}" />
+
+							<h:outputText value="Verioning Method" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningMethod}" />
+						</h:panelGrid>
+					</p:dialog>
+				</p:column>
+			</p:dataTable>
+
+			<p:dataTable style="margin-top: 20px" var="res"
+				value="#{resourcesView.poster}">
+				<p:column style="width:260px" headerText="Poster">
+					<h:outputText value="#{res.label}" />
+				</p:column>
+				<p:column style="width:80px">
+					<p:commandButton value="Details" type="button"
+						onclick="PF('#{res.uri}o').show();" />
+					<p:dialog modal="true" header="#{res.label}"
+						widgetVar="#{res.uri}o" minHeight="40">
+
+						<h:panelGrid columns="2">
+
+							<h:outputText value="URI" style="font-weight:bold" />
+							<h:outputText value="#{res.uri}" />
+
+							<h:outputText value="Description" style="font-weight:bold" />
+							<h:outputText escape="false" value="#{res.description}" />
+
+							<h:outputText value="Revisions" style="font-weight:bold" />
+							<h:outputText value="#{res.revisions}" />
+
+							<h:outputText value="Status" style="font-weight:bold" />
+							<h:outputText value="#{res.status}" />
+
+							<h:outputText value="Verioning Level" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningLevel}" />
+
+							<h:outputText value="Verioning Method" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningMethod}" />
+						</h:panelGrid>
+					</p:dialog>
+				</p:column>
+			</p:dataTable>
+
+			<p:dataTable style="margin-top: 20px" var="res"
+				value="#{resourcesView.software}">
+				<p:column style="width:260px" headerText="Software">
+					<h:outputText value="#{res.label}" />
+				</p:column>
+				<p:column style="width:80px">
+					<p:commandButton value="Details" type="button"
+						onclick="PF('#{res.uri}o').show();" />
+					<p:dialog modal="true" header="#{res.label}"
+						widgetVar="#{res.uri}o" minHeight="40">
+
+						<h:panelGrid columns="2">
+
+							<h:outputText value="URI" style="font-weight:bold" />
+							<h:outputText value="#{res.uri}" />
+
+							<h:outputText value="Description" style="font-weight:bold" />
+							<h:outputText escape="false" value="#{res.description}" />
+
+							<h:outputText value="Revisions" style="font-weight:bold" />
+							<h:outputText value="#{res.revisions}" />
+
+							<h:outputText value="Status" style="font-weight:bold" />
+							<h:outputText value="#{res.status}" />
+
+							<h:outputText value="Verioning Level" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningLevel}" />
+
+							<h:outputText value="Verioning Method" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningMethod}" />
+						</h:panelGrid>
+					</p:dialog>
+				</p:column>
+			</p:dataTable>
+
+			<p:dataTable style="margin-top: 20px" var="res"
+				value="#{resourcesView.demo}">
+				<p:column style="width:260px" headerText="Demo">
+					<h:outputText value="#{res.label}" />
+				</p:column>
+				<p:column style="width:80px">
+					<p:commandButton value="Details" type="button"
+						onclick="PF('#{res.uri}o').show();" />
+					<p:dialog modal="true" header="#{res.label}"
+						widgetVar="#{res.uri}o" minHeight="40">
+
+						<h:panelGrid columns="2">
+
+							<h:outputText value="URI" style="font-weight:bold" />
+							<h:outputText value="#{res.uri}" />
+
+							<h:outputText value="Description" style="font-weight:bold" />
+							<h:outputText escape="false" value="#{res.description}" />
+
+							<h:outputText value="Revisions" style="font-weight:bold" />
+							<h:outputText value="#{res.revisions}" />
+
+							<h:outputText value="Status" style="font-weight:bold" />
+							<h:outputText value="#{res.status}" />
+
+							<h:outputText value="Verioning Level" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningLevel}" />
+
+							<h:outputText value="Verioning Method" style="font-weight:bold" />
+							<h:outputText value="#{res.versioningMethod}" />
+						</h:panelGrid>
+					</p:dialog>
+				</p:column>
+			</p:dataTable>
+
+
+
+		</div>
+
+
+
+
+	</div>
+
+	<div style="clear: both;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+</h:body>
+</html>
