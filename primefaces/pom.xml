@@ -59,12 +59,11 @@
 			<version>9.2.0.v20140526</version>
 		</dependency>
 
-	<dependency>
+		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-core</artifactId>
 			<version>2.11.1</version>
 		</dependency>
-
 
 	</dependencies>
 
@@ -85,9 +84,9 @@
 
 				<configuration>
 					<webAppConfig>
-						<contextPath>/s4c</contextPath>
+						<contextPath>/dashboard</contextPath>
 					</webAppConfig>
-					<reload>manual</reload>
+					<reload></reload>
 				</configuration>
 			</plugin>
 		</plugins>

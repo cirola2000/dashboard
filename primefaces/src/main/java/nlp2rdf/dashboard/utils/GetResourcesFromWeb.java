@@ -42,15 +42,12 @@ public class GetResourcesFromWeb {
 			
 		// instantiate ontologies classes
 			
-			String obj = urisIt.next();
+		String obj = urisIt.next();
 		StmtIterator it = model.listStatements(null, model.getProperty("http://persistence.uni-leipzig.org/nlp2rdf/ontologies/dev/misc/resources.ttl#type") , obj);
 		
 		while(it.hasNext()){
 			Statement stmt      = it.nextStatement();  // get next statement
 		    Resource  subject   = stmt.getSubject();     // get the subject
-
-		    System.out.println(subject.toString());
-		    System.out.println(obj);
 		    
 			Resources r2 = new Resources();
 			r2.setLabel(subject.getProperty(RDFS.label).getObject().toString());
