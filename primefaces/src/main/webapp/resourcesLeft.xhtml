@@ -1,0 +1,29 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<div style="float: left; width: 375px">
+				<ui:insert name="header">
+					<ui:include src="tableTemplate.xhtml">
+
+						<ui:param name="resource" value="#{resourcesView.ontologies}" />
+						<ui:param name="header" value="Ontology" />
+
+					</ui:include>
+				</ui:insert>
+			</div>
+
+
+			<div style="float: left; width: 375px; margin-left: 17px">
+				<ui:insert name="header">
+					<ui:include src="tableTemplate.xhtml">
+
+						<ui:param name="resource" value="#{resourcesView.specifications}" />
+						<ui:param name="header" value="NIF Specifications" />
+
+					</ui:include>
+				</ui:insert>
+			</div>
+			
+			</ui:composition>

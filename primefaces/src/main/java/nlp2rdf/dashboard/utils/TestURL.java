@@ -17,7 +17,7 @@ public class TestURL {
 					"UTF-8"));
 
 			for (String line; (line = reader.readLine()) != null;) {
-				if (line.startsWith("@"))
+				if (line.startsWith("@") || line.contains("!DOCTYPE html>"))
 					return true;
 				else
 					return false;
