@@ -21,7 +21,9 @@ public class CheckDemoStatus implements Serializable {
 
 	public String validatorURL = "http://demo.nlp2rdf.org:9990";
 	
+	public String snowballURL = "http://demo.nlp2rdf.org:9996/snowball?f=text&i=This+is+my+favorite+test.&t=direct";
 	
+
 	public String onlineMsg = "<div style=\"color: #66FF66\">Online!</div>";
 	
 	public String offlineMsg = "<div style=\"color: #FF6666\">Offline!</div>";
@@ -32,7 +34,17 @@ public class CheckDemoStatus implements Serializable {
 	
 	public String validatorStatus = offlineMsg;
 	
+	public String snowballStatus = offlineMsg;
 	
+	
+
+	public String getSnowballStatus() {
+		return snowballStatus;
+	}
+
+	public void setSnowballStatus(String snowballStatus) {
+		this.snowballStatus = snowballStatus;
+	}
 
 	public String getValidatorURL() {
 		return validatorURL;
@@ -81,6 +93,14 @@ public class CheckDemoStatus implements Serializable {
 	public void setOpenNLPStatus(String demo1Status) {
 		this.openNLPStatus = demo1Status;
 	}
+	
+	public String getSnowballURL() {
+		return snowballURL;
+	}
+
+	public void setSnowballURL(String snowballURL) {
+		this.snowballURL = snowballURL;
+	}
 
 	@PostConstruct
 	public void check(){
@@ -90,16 +110,24 @@ public class CheckDemoStatus implements Serializable {
 				openNLPStatus = onlineMsg;
 			else
 				openNLPStatus = offlineMsg;
+			
 			if (TestURL
 					.Test(stanfordURL))
 				stanfordStatus = onlineMsg;
 			else
 				stanfordStatus = offlineMsg;
+			
 			if (TestURL
 					.Test(validatorURL))
 				validatorStatus = onlineMsg;
 			else
 				validatorStatus = offlineMsg;
+			
+			if (TestURL
+					.Test(snowballURL))
+				snowballStatus = onlineMsg;
+			else
+				snowballStatus = offlineMsg;
 			
 
 		} catch (Exception e) {

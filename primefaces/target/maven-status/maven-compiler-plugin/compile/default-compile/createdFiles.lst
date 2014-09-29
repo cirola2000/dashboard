@@ -1,6 +1,6 @@
 nlp2rdf/dashboard/primefaces/CheckDemoStatus.class
-nlp2rdf/dashboard/utils/TestURL.class
 nlp2rdf/dashboard/primefaces/Dashboard.class
 nlp2rdf/dashboard/resources/Resources.class
-nlp2rdf/dashboard/utils/GetResourcesFromWeb.class
 nlp2rdf/dashboard/primefaces/ResourcesView.class
+nlp2rdf/dashboard/utils/TestURL.class
+nlp2rdf/dashboard/utils/GetResourcesFromWeb.class

@@ -24,7 +24,6 @@
 				NIF 2.0 project. Here you can also find documentation, corporas,
 				ontologies, demos, wikis and specifications.</p>
 		</p:outputPanel>
-
 	</div>
 
 
@@ -55,6 +54,15 @@
 				<h:outputText escape="false"
 					value="#{checkDemoStatus.stanfordStatus}" />
 
+				<h:outputText value="Snowball" />
+				<h:outputLink target="_blank"
+					value="#{checkDemoStatus.snowballURL}">
+					<h:outputText value="#{checkDemoStatus.snowballURL}" />
+				</h:outputLink>
+				<h:outputText escape="false"
+					value="#{checkDemoStatus.snowballStatus}" />
+
+
 				<h:outputText value="NIF Validator" />
 				<h:outputLink target="_blank"
 					value="#{checkDemoStatus.validatorURL}">
@@ -76,10 +84,8 @@
 
 				<f:facet name="footer">
 
-
-
-			
-
+					<p:commandButton value="Add Corpus" type="button"
+						onclick="PF('dataID').show();" />
 
 				</f:facet>
 			</p:panelGrid>
@@ -92,7 +98,34 @@
 	</div>
 	<div style="clear: both;"></div>
 
-	
+	<p:dialog width="450px" modal="true" header="DataID" widgetVar="dataID"
+		minHeight="40">
+		<h3>Add new NIF corpus</h3>
+		<p>In order to add your corpus to NIF list you must upload your
+			dataid.ttl file or enter a valid DataID url.</p>
+		<p>
+			More information about how to create a dataid file can be found at
+			the
+			<h:outputLink target="_blank"
+				value="http://wiki.dbpedia.org/coop/DataIDUnit">DataID website</h:outputLink>
+			.
+		</p>
+
+		<p>Please fill the form so we can address to you.</p>
+
+		<p>Upload File:</p>
+		<h:form style="margin-top: 15px">
+
+			<p:growl id="messages" showDetail="true" />
+
+
+			<p:fileUpload update="messages"
+				fileUploadListener="#{fileUploadController.upload}"
+				allowTypes="/(\.|\/)(xml|ttl)$/" sizeLimit="100000000" auto="true"
+				description="Select DataID File" oncomplete="dataID.hide()" />
+
+		</h:form>
+	</p:dialog>
 
 </h:body>
 </html>

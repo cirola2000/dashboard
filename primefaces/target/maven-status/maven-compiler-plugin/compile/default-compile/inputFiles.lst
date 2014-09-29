@@ -2,5 +2,6 @@
 /home/ciro/workspace/primefaces/primefaces/src/main/java/nlp2rdf/dashboard/primefaces/Dashboard.java
 /home/ciro/workspace/primefaces/primefaces/src/main/java/nlp2rdf/dashboard/utils/GetResourcesFromWeb.java
 /home/ciro/workspace/primefaces/primefaces/src/main/java/nlp2rdf/dashboard/primefaces/ResourcesView.java
+/home/ciro/workspace/primefaces/primefaces/src/main/java/nlp2rdf/dashboard/primefaces/FileUploadController.java
 /home/ciro/workspace/primefaces/primefaces/src/main/java/nlp2rdf/dashboard/primefaces/CheckDemoStatus.java
 /home/ciro/workspace/primefaces/primefaces/src/main/java/nlp2rdf/dashboard/resources/Resources.java
