@@ -23,6 +23,8 @@ public class CheckDemoStatus implements Serializable {
 	
 	public String snowballURL = "http://demo.nlp2rdf.org:9996/snowball?f=text&i=This+is+my+favorite+test.&t=direct";
 	
+	public String spotlightURL = "http://demo.nlp2rdf.org:9995/spotlight?f=text&i=This+is+Germany.&t=direct&confidence=0.3";
+	
 
 	public String onlineMsg = "<div style=\"color: #66FF66\">Online!</div>";
 	
@@ -36,7 +38,43 @@ public class CheckDemoStatus implements Serializable {
 	
 	public String snowballStatus = offlineMsg;
 	
+	public String spotlightStatus = offlineMsg;
 	
+	public String demoURL = "http://demo.nlp2rdf.org";
+	
+	public String demoStatus = offlineMsg;
+	
+	public String getSpotlightURL() {
+		return spotlightURL;
+	}
+
+	public void setSpotlightURL(String spotlightURL) {
+		this.spotlightURL = spotlightURL;
+	}
+
+	public String getDemoURL() {
+		return demoURL;
+	}
+
+	public void setDemoURL(String demoURL) {
+		this.demoURL = demoURL;
+	}
+
+	public String getSpotlightStatus() {
+		return spotlightStatus;
+	}
+
+	public void setSpotlightStatus(String spotlightStatus) {
+		this.spotlightStatus = spotlightStatus;
+	}
+
+	public String getDemoStatus() {
+		return demoStatus;
+	}
+
+	public void setDemoStatus(String demoStatus) {
+		this.demoStatus = demoStatus;
+	}
 
 	public String getSnowballStatus() {
 		return snowballStatus;
@@ -128,6 +166,18 @@ public class CheckDemoStatus implements Serializable {
 				snowballStatus = onlineMsg;
 			else
 				snowballStatus = offlineMsg;
+			
+			if (TestURL
+					.Test(spotlightURL))
+				spotlightStatus = onlineMsg;
+			else
+				spotlightStatus = offlineMsg;
+			
+			if (TestURL
+					.Test(demoURL))
+				demoStatus = onlineMsg;
+			else
+				demoStatus = offlineMsg;
 			
 
 		} catch (Exception e) {

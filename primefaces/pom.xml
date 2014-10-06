@@ -3,13 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>info.source4code</groupId>
-	<artifactId>jsf-primefaces-helloworld</artifactId>
+	<groupId>nlp2rdf.dashboard.primefaces</groupId>
+	<artifactId>dashboard</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>JSF - PrimeFaces HelloWorld example using Jetty</name>
-	<url>http://www.source4code.info/2014/04/jsf-primefaces-helloworld-example.html</url>
+	<name>NIF dashboard</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
