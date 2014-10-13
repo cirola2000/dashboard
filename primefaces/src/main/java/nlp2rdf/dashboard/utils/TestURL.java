@@ -7,12 +7,12 @@ import java.net.URL;
 
 public class TestURL {
 
-	public static boolean Test(String URL) throws Exception {
+	public static boolean Test(String URL) {
 
-		URL url = new URL(URL);
 		BufferedReader reader = null;
-
 		try {
+			URL url = new URL(URL);
+
 			reader = new BufferedReader(new InputStreamReader(url.openStream(),
 					"UTF-8"));
 
@@ -23,12 +23,14 @@ public class TestURL {
 					return false;
 
 			}
-		} finally {
-			if (reader != null)
-				try {
-					reader.close();
-				} catch (IOException ignore) {
-				}
+		}
+
+		catch (Exception ignore) {
+			try {
+				reader.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}
 		return false;
 	}

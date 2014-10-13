@@ -142,7 +142,7 @@ public class CheckDemoStatus implements Serializable {
 
 	@PostConstruct
 	public void check(){
-		try {
+		
 			if (TestURL
 					.Test(openNLPURL))
 				openNLPStatus = onlineMsg;
@@ -178,10 +178,5 @@ public class CheckDemoStatus implements Serializable {
 				demoStatus = onlineMsg;
 			else
 				demoStatus = offlineMsg;
-			
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 }
