@@ -7,41 +7,42 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <body>
-	<ui:composition>		
-		<p:dataTable style="margin-top: 20px" var="res"
-				value="#{resource}">
-				<p:column style="width:260px" headerText="#{header}">
-					<h:outputText value="#{res.label}" />
-				</p:column>
-				<p:column style="width:80px">
-					<p:commandButton value="Details" type="button"
-						onclick="PF('#{res.uri}o').show();" />
-					<p:dialog modal="true" header="#{res.label}"
-						widgetVar="#{res.uri}o" minHeight="40">
+	<ui:composition>
+		<p:dataTable style="margin-top: 20px" var="res" value="#{resource}">
+			<p:column style="width:260px" headerText="#{header}">
+				<h:outputText value="#{res.label}" />
+			</p:column>
+			<p:column style="width:80px">
+				<p:commandButton value="Details" type="button"
+					onclick="PF('#{res.uri}o').show();" />
+				<p:dialog modal="true" header="#{res.label}" widgetVar="#{res.uri}o"
+					minHeight="40">
 
-						<h:panelGrid columns="2">
+					<h:panelGrid columns="2">
 
-							<h:outputText value="URI" style="font-weight:bold" />
-							<h:link escape="false" value="#{res.uri}" />
+						<h:outputText value="URI" style="font-weight:bold" />
+						<h:outputLink target="_blank" value="#{res.uri}">
+							<h:outputText value="#{res.uri}" />
+						</h:outputLink>
 
-							<h:outputText value="Description" style="font-weight:bold" />
-							<h:outputText escape="false" value="#{res.description}" />
+						<h:outputText value="Description" style="font-weight:bold" />
+						<h:outputText escape="false" value="#{res.description}" />
 
-							<h:outputText value="Revisions" style="font-weight:bold" />
-							<h:outputText value="#{res.revisions}" />
+						<h:outputText value="Revisions" style="font-weight:bold" />
+						<h:outputText value="#{res.revisions}" />
 
-							<h:outputText value="Status" style="font-weight:bold" />
-							<h:outputText value="#{res.status}" />
+						<h:outputText value="Status" style="font-weight:bold" />
+						<h:outputText value="#{res.status}" />
 
-							<h:outputText value="Verioning Level" style="font-weight:bold" />
-							<h:outputText value="#{res.versioningLevel}" />
+						<h:outputText value="Verioning Level" style="font-weight:bold" />
+						<h:outputText value="#{res.versioningLevel}" />
 
-							<h:outputText value="Verioning Method" style="font-weight:bold" />
-							<h:outputText value="#{res.versioningMethod}" />
-						</h:panelGrid>
-					</p:dialog>
-				</p:column>
-			</p:dataTable>
+						<h:outputText value="Verioning Method" style="font-weight:bold" />
+						<h:outputText value="#{res.versioningMethod}" />
+					</h:panelGrid>
+				</p:dialog>
+			</p:column>
+		</p:dataTable>
 	</ui:composition>
 </body>
 </html>

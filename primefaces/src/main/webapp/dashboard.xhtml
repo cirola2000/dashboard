@@ -19,7 +19,7 @@
 <h:body style="background-image: url('img/bg.png');  font-size: 13px;">
 	<div>
 		<p:outputPanel deferred="true">
-			<h3>NIF 2.0 Dashboard.</h3>
+			<h3>NIF 2.0 Dashboard</h3>
 			<p>This dashboard reflects the actual state of resources of the
 				NIF 2.0 project. Here you can also find documentation, corporas,
 				ontologies, demos, wikis and specifications.</p>
@@ -55,8 +55,7 @@
 					value="#{checkDemoStatus.stanfordStatus}" />
 
 				<h:outputText value="Snowball" />
-				<h:outputLink target="_blank"
-					value="#{checkDemoStatus.snowballURL}">
+				<h:outputLink target="_blank" value="#{checkDemoStatus.snowballURL}">
 					<h:outputText value="#{checkDemoStatus.snowballURL}" />
 				</h:outputLink>
 				<h:outputText escape="false"
@@ -70,8 +69,8 @@
 				</h:outputLink>
 				<h:outputText escape="false"
 					value="#{checkDemoStatus.validatorStatus}" />
-					
-					
+
+
 				<h:outputText value="NIF DBpedia Spotlight" />
 				<h:outputLink target="_blank"
 					value="#{checkDemoStatus.spotlightURL}">
@@ -79,15 +78,13 @@
 				</h:outputLink>
 				<h:outputText escape="false"
 					value="#{checkDemoStatus.spotlightStatus}" />
-					
-					
+
+
 				<h:outputText value="NIF Combinator" />
-				<h:outputLink target="_blank"
-					value="#{checkDemoStatus.demoURL}">
+				<h:outputLink target="_blank" value="#{checkDemoStatus.demoURL}">
 					<h:outputText value="#{checkDemoStatus.demoURL}" />
 				</h:outputLink>
-				<h:outputText escape="false"
-					value="#{checkDemoStatus.demoStatus}" />
+				<h:outputText escape="false" value="#{checkDemoStatus.demoStatus}" />
 
 			</p:panelGrid>
 
@@ -98,7 +95,40 @@
 
 				<h:outputText value="Corpus Name" style="font-weight:bold" />
 				<h:outputText value="URL" style="font-weight:bold" />
-				<h:outputText value="DataID File" style="font-weight:bold" />
+				<h:outputText value="Size" style="font-weight:bold" />
+
+				<h:outputText value="The LOD Wikilinks corpus" />
+				<h:outputLink value="http://wiki-link.nlp2rdf.org/" target="_blank">
+					<h:outputText value="http://wiki-link.nlp2rdf.org/" />
+				</h:outputLink>
+				<h:outputText value="500M" />
+
+				<h:outputText value="News-100 corpus" />
+				<h:outputLink value="https://raw.githubusercontent.com/AKSW/n3-collection/master/News-100.ttl" target="_blank">
+					<h:outputText value="https://raw.githubusercontent.com/AKSW/n3-collection/master/News-100.ttl" />
+				</h:outputLink>
+				<h:outputText value="13k" />
+
+				<h:outputText value="RSS-500 corpus" />
+				<h:outputLink value="https://raw.githubusercontent.com/AKSW/n3-collection/master/RSS-500.ttl" target="_blank">
+					<h:outputText value="https://raw.githubusercontent.com/AKSW/n3-collection/master/RSS-500.ttl" />
+				</h:outputLink>
+				<h:outputText value="10k" />
+				
+				<h:outputText value="Reuters-128 corpus" />
+				<h:outputLink value="https://raw.githubusercontent.com/AKSW/n3-collection/master/Reuters-128.ttl" target="_blank">
+					<h:outputText value="https://raw.githubusercontent.com/AKSW/n3-collection/master/Reuters-128.ttl" />
+				</h:outputLink>
+				<h:outputText value="7k" />
+				
+				<h:outputText value="Brown corpus" />
+				<h:outputLink value="http://brown.nlp2rdf.org/" target="_blank">
+					<h:outputText value="http://brown.nlp2rdf.org/" />
+				</h:outputLink>
+				<h:outputText value="500k" />
+				
+				
+
 
 				<f:facet name="footer">
 
