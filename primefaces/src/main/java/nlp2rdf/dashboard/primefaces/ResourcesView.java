@@ -25,11 +25,6 @@ public class ResourcesView implements Serializable{
 
 	public ResourcesView(){
 		
-//		resources.add(new Resources("Oi","Descricao"));
-//		resources.add(new Resources("Oi","Descricao"));
-//		resources.add(new Resources("Oi","Descricao"));
-//		resources.add(new Resources("Oi","Descricao"));
-		
 		resources = GetResourcesFromWeb.Go();
 
 		ontologies = resources.get(0);

@@ -1,45 +1,63 @@
-<ui:composition 
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:ui="http://java.sun.com/jsf/facelets">
-    
-<div style="float: right; width: 330px;">
-			<div style="margin-top: -20px">
-				<ui:insert name="header">
-					<ui:include src="tableTemplate.xhtml">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-						<ui:param name="resource" value="#{resourcesView.wikis}" />
-						<ui:param name="header" value="Wikis" />
-
-					</ui:include>
-				</ui:insert>
-			</div>
-
-			<ui:insert>
-				<ui:include src="tableTemplate.xhtml">
-
-					<ui:param name="resource" value="#{resourcesView.poster}" />
-					<ui:param name="header" value="Poster" />
-
-				</ui:include>
-			</ui:insert>
-
+	<div style="float: right; width: 330px;">
+		<div style="margin-top: -20px">
 			<ui:insert name="header">
 				<ui:include src="tableTemplate.xhtml">
 
-					<ui:param name="resource" value="#{resourcesView.software}" />
-					<ui:param name="header" value="Software" />
-
-				</ui:include>
-			</ui:insert>
-			<ui:insert name="header">
-				<ui:include src="tableTemplate.xhtml">
-
-					<ui:param name="resource" value="#{resourcesView.demo}" />
-					<ui:param name="header" value="Demo" />
+					<ui:param name="resource" value="#{resourcesView.wikis}" />
+					<ui:param name="header" value="Wikis" />
 
 				</ui:include>
 			</ui:insert>
 		</div>
-		</ui:composition>
+
+		<ui:insert>
+			<ui:include src="tableTemplate.xhtml">
+
+				<ui:param name="resource" value="#{resourcesView.poster}" />
+				<ui:param name="header" value="Poster" />
+
+			</ui:include>
+		</ui:insert>
+
+		<ui:insert name="header">
+			<ui:include src="tableTemplate.xhtml">
+
+				<ui:param name="resource" value="#{resourcesView.software}" />
+				<ui:param name="header" value="Software" />
+
+			</ui:include>
+		</ui:insert>
+		<ui:insert name="header">
+			<ui:include src="tableTemplate.xhtml">
+
+				<ui:param name="resource" value="#{resourcesView.demo}" />
+				<ui:param name="header" value="Demo" />
+
+			</ui:include>
+		</ui:insert>
+		<ui:insert name="header">
+			<ui:include src="tableTemplate.xhtml">
+
+				<ui:param name="resource" value="#{resourcesView.ontologies}" />
+				<ui:param name="header" value="Ontology" />
+
+			</ui:include>
+		</ui:insert>
+		<ui:insert name="header">
+					<ui:include src="tableTemplate.xhtml">
+
+						<ui:param name="resource" value="#{resourcesView.specifications}" />
+						<ui:param name="header" value="NIF Specifications" />
+
+					</ui:include>
+				</ui:insert>
+
+
+	</div>
+
+</ui:composition>
